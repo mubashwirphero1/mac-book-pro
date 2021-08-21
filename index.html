@@ -42,25 +42,32 @@
                 <div class="mt-5">
                     <h6 class="font-black font-xs mb-3">Memory</h6>
                     <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-2">
-                        <button class="btn btn-outline-secondary">8GB unified memory</button>
-                        <button class="btn btn-outline-secondary">16GB unified memory</button>
+                        <button onclick="getExtraSpec('8gb-memory')" class="btn btn-outline-secondary">8GB
+                            unified memory</button>
+                        <button onclick="getExtraSpec('16gb-memory')" class="btn btn-outline-secondary">16GB
+                            unified memory</button>
                     </div>
                 </div>
                 <!-- Mac storage area -->
                 <div class="mt-5">
                     <h6 class="font-black font-xs mb-3">Storage</h6>
                     <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2">
-                        <button class="btn btn-outline-secondary">256GB SSD storage</button>
-                        <button class="btn btn-outline-secondary">512GB SSD storage</button>
-                        <button class="btn btn-outline-secondary">1TB SSD storage</button>
+                        <button onclick="getExtraSpec('256gb-storage')" class="btn btn-outline-secondary">256GB SSD
+                            storage</button>
+                        <button onclick="getExtraSpec('512gb-storage')" class="btn btn-outline-secondary">512GB SSD
+                            storage</button>
+                        <button onclick="getExtraSpec('1tb-storage')" class="btn btn-outline-secondary">1TB SSD
+                            storage</button>
                     </div>
                 </div>
                 <!-- Mac delivery area -->
                 <div class="mt-5">
                     <h6 class="font-black font-xs mb-3">Storage</h6>
                     <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-2">
-                        <button class="btn btn-outline-secondary">Friday, August 25 FREE Prime Delivery</button>
-                        <button class="btn btn-outline-secondary">Saturday, August 21 Delivery charge $20</button>
+                        <button onclick="getExtraSpec('normal-delivery')" class="btn btn-outline-secondary">Friday,
+                            August 25 FREE Prime Delivery</button>
+                        <button onclick="getExtraSpec('onetime-delivery')" class="btn btn-outline-secondary">Saturday,
+                            August 21 Delivery charge $20</button>
                     </div>
                 </div>
                 <!-- Total cost area -->
@@ -72,33 +79,35 @@
                         </tr>
                         <tr>
                             <th>Extra memory cost</th>
-                            <td>$0</td>
+                            <td>$<span id="memory-cost">0</span></td>
                         </tr>
                         <tr>
                             <th>Extra storage cost</th>
-                            <td>$0</td>
+                            <td>$<span id="storage-cost">0</span></td>
                         </tr>
                         <tr>
                             <th>Delivery cost</th>
-                            <td>$0</td>
+                            <td>$<span id="delivery-cost">0</span></td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
                             <th scope="col">Total Cost</th>
-                            <th scope="col">$1299</th>
+                            <th scope="col">$<span id="total-price">1299</span></th>
                         </tr>
                     </tfoot>
                 </table>
                 <!-- Promo code area -->
                 <div class="mt-5">
                     <h6 class="font-semibold font-xs mb-3">Add Promo Code</h6>
+                    <p id="promo-warning" class="font-sm font-bold text-red-500"></p>
                     <div class="row">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Promo Code" aria-label="First name">
+                            <input id="promo-code" type="text" class="form-control" placeholder="Promo Code"
+                                aria-label="First name">
                         </div>
                         <div class="col">
-                            <button class="btn btn-danger">Apply</button>
+                            <button onclick="promoCode()" class="btn btn-danger">Apply</button>
                         </div>
                     </div>
                 </div>
@@ -109,7 +118,7 @@
     <!-- Footer part -->
     <footer>
         <hr class="w-3/4 mx-auto">
-        <h2 class="text-5xl font-semibold text-center mt-2">Total : $1299</h2>
+        <h2 class="text-5xl font-semibold text-center mt-2">Total : $<span id="promo-price">1299</span></h2>
     </footer>
 
 
