@@ -1,0 +1,12 @@
+/* Google fonts link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* Some simple typography  */
+body{
+    font-family: 'Poppins', sans-serif;
+}
+h1, h2,h3, h4, h5, h6{
+    color: rgb(24, 22, 22);
+}
+p{
+    color: rgba(24, 22, 22, 0.911);
+}
